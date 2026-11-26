@@ -51,3 +51,14 @@ body.lp{margin:0;color:#fff;font-family:'Lexend','Segoe UI',system-ui,sans-serif
 .lf .brand2{display:flex;align-items:center;gap:12px;flex:1;min-width:200px}.lf img,.lf .seal{width:40px;height:40px;border-radius:50%}.lf b{color:#fff;display:block}
 .lf span.i{display:flex;gap:7px;align-items:center}
 @media(max-width:860px){.cols,.flow{grid-template-columns:1fr}.bc{width:100%;max-width:340px}.lbar .brand span{font-size:.85rem}.lbar nav .hide{display:none}.ba .arrow{transform:rotate(90deg)}}
+/* Report Now: dark text on lime (beats .lp a{color:inherit}) */
+.lp .cta{color:#10233a}.lp .cta:hover{color:#10233a}
+/* phones: compact header, keep text-size buttons + Track link on one line */
+@media(max-width:600px){
+  .lbar{padding:8px 14px;gap:10px}
+  .lbar .brand span{display:none}
+  .lbar img,.lbar .seal{width:38px;height:38px}
+  .lbar nav{gap:12px;flex-shrink:0;white-space:nowrap}
+  .sz button{padding:4px 9px}
+  .lp .cta{display:block;max-width:320px;margin:0 auto;padding:14px 20px}
+}

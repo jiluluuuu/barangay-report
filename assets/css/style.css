@@ -203,3 +203,10 @@ h1.page{font-size:32px;font-weight:700}
 .rb .bell-panel{width:310px;max-width:calc(100vw - 24px);overflow-x:hidden;text-align:left}
 .rb .bell{position:relative}
 .rb-list{max-height:320px;overflow:auto}
+/* phones: compact top bar on public + admin pages; bell panel fits the screen */
+@media(max-width:600px){
+  .topbar{padding:8px 14px}
+  .topbar .brand{font-size:13px;line-height:1.25;min-width:0}
+  .top-right{gap:10px;white-space:nowrap;flex-shrink:0}
+  .rb .bell-panel,.bell-panel{position:fixed;left:12px;right:12px;top:62px;width:auto;max-width:none}
+}
