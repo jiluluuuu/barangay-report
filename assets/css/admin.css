@@ -91,3 +91,33 @@ body.admin .topbar{z-index:1200}
 .ov-chip i{width:8px;height:8px;border-radius:50%;background:var(--c)}
 .ov-chip em{font-style:normal;font-weight:700;color:var(--c);background:#fff;border-radius:10px;padding:0 6px;font-size:11px}
 .ov-chip.Busy{--c:#d97706;--bg:#fdf0dc}.ov-chip.Resting{--c:#7c8696;--bg:#eceef2}
+/* the "no pins" overlay must obey [hidden] (display:flex above overrides it) */
+.map-empty[hidden]{display:none}
+
+/* ---------- admin on phones / small tablets ---------- */
+@media(max-width:760px){
+  .shell{flex-direction:column;min-height:0}
+  /* sidebar becomes a tab row under the header */
+  body.admin .side{display:flex;flex-direction:row;width:auto;min-height:0;padding:8px 10px;gap:6px;overflow-x:auto;border-right:0;border-bottom:1px solid #e3e8ef}
+  body.admin .side a{flex:1 0 auto;padding:9px 12px;font-size:13px;white-space:nowrap;justify-content:center;gap:6px}
+  body.admin .side a .ic{width:16px;height:16px}
+  body.admin .side a.active{box-shadow:inset 0 -3px 0 #2e7d32}
+  body.admin .side-note{display:none}
+  .content,body.fit .content{padding:14px 12px}
+  h1.page,body.fit h1.page{font-size:22px}
+  .pagehead small{font-size:12px;flex-wrap:wrap}
+  .top-right > span{display:none}            /* "Staff |" label */
+  .mapp #map{height:300px}
+  /* reports page */
+  .filters > *{flex:1 1 100%;min-width:0}
+  .filters select,.filters input{width:100%;min-width:0;box-sizing:border-box}
+  .tabs{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px}.tabs button{flex:0 0 auto}
+  .cards{grid-template-columns:1fr}
+  .modal{padding:8px}.modal-box{padding:14px;max-height:96vh}
+}
+@media(max-width:480px){
+  .stats4{gap:10px}
+  .stat4{padding:10px;gap:8px}.stat4 .bi{display:none}
+  .stat4 .num{font-size:24px}.stat4 small{font-size:10px}
+  .tgrid{grid-template-columns:1fr}
+}
