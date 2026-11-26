@@ -32,11 +32,17 @@ function run_sql_file($pdo, $file) {
 
 $msg = ''; $err = '';
 $pdo = null; $server = null; $dbExists = false; $connErr = '';
+// Connect straight to the database first: shared hosts (InfinityFree etc.) create it for you
+// and do not allow SHOW DATABASES / CREATE DATABASE.
 try {
-    $server = conn();
-    $dbExists = (bool)$server->query("SHOW DATABASES LIKE " . $server->quote($db_name))->fetch();
-    if ($dbExists) $pdo = conn($db_name);
-} catch (Throwable $e) { $connErr = $e->getMessage(); }
+    $pdo = conn($db_name); $server = $pdo; $dbExists = true;
+} catch (Throwable $e) {
+    try {
+        $server = conn();   // local: database may simply not exist yet
+        $dbExists = (bool)$server->query("SHOW DATABASES LIKE " . $server->quote($db_name))->fetch();
+        if ($dbExists) $pdo = conn($db_name);
+    } catch (Throwable $e2) { $connErr = $e->getMessage(); }
+}
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && $server) {
     $do = $_POST['do'] ?? '';
@@ -65,7 +71,7 @@ $up = __DIR__ . '/uploads';
 if (!is_dir($up)) @mkdir($up, 0775, true);
 $add(is_dir($up) && is_writable($up), 'Folder uploads/ is writable', is_writable($up) ? 'yes' : 'No. Give the web server write permission to uploads/');
 $add(true, 'PHP upload limits', 'upload_max_filesize ' . ini_get('upload_max_filesize') . ', post_max_size ' . ini_get('post_max_size') . ' (photos are shrunk in the browser, so small limits still work)');
-$add(file_exists(__DIR__ . '/images/logo.png'), 'images/logo.png', file_exists(__DIR__ . '/images/logo.png') ? 'found' : 'missing (a round "B" shows instead). Add your logo');
+$add(true, 'images/logo.png', file_exists(__DIR__ . '/images/logo.png') ? 'found' : 'missing (a round "B" shows instead). Add your logo');
 $add(!$connErr, "MySQL server $host:$port as '$db_user'", $connErr ?: 'connected');
 $add($dbExists, "Database `$db_name`", $dbExists ? 'exists' : 'does not exist yet. Press "Create database and tables"');
 
