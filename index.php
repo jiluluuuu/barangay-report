@@ -16,9 +16,9 @@ $logo = '<img src="images/bgy.jpg" alt="" onerror="this.replaceWith(Object.assig
 <body class="lp">
 <?php sprite(); ?>
 <header class="lbar">
-  <a class="brand" href="index.php"><?= $logo ?><span>Barangay Accessibility &amp; Barrier Report System</span></a>
+  <a class="brand" href="index.php"><?= $logo ?><span class="t-full">Barangay Accessibility &amp; Barrier Report System</span><span class="t-short">Barrier Report<br>System</span></a>
   <nav><div class="sz" role="group" aria-label="Text size"><button type="button" data-s="" aria-pressed="true">A</button><button type="button" data-s="lg" aria-pressed="false">A+</button></div>
-    <a href="track.php">Track a report</a></nav>
+    <a href="track.php">Track<span class="t-full"> a report</span></a></nav>
 </header>
 
 <main class="hero3">
