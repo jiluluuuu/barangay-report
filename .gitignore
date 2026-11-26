@@ -6,3 +6,4 @@ uploads/*
 *.log
 .vscode/
 .claude/
+config/hosting.php

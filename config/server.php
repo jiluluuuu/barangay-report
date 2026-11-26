@@ -1,13 +1,19 @@
 <?php
-// ---- MySQL settings (Laragon here uses port 3307; most web hosts use "localhost" and 3306) ----
+// ---- Local MySQL settings (Laragon uses port 3307) ----
 $host = "127.0.0.1";
 $port = "3307";
 $db_user = "root";
 $db_pass = "";
 $db_name = "barrier_report_db";
+$debug = true;       // shows errors while testing
+$setup_key = '';     // empty = setup.php only works on this computer
 
-const DEBUG = true;      // true while testing, false when the site is public
-const SETUP_KEY = '';    // for hosting only: set a secret to open setup.php remotely (?key=...), then delete setup.php
+// ---- Online hosting: config/hosting.php (not in git) overrides the values above ----
+$is_local = (bool)preg_match('/(^|\.)(localhost|test)$|^127\.0\.0\.1$|^\[?::1\]?$/', preg_replace('/:\d+$/', '', $_SERVER['HTTP_HOST'] ?? 'localhost'));
+if (!$is_local && is_file(__DIR__ . '/hosting.php')) require __DIR__ . '/hosting.php';
+
+define('DEBUG', $debug);
+define('SETUP_KEY', $setup_key);
 
 $IS_API = (bool)preg_match('#/(api/|admin/api\.php)#', str_replace('\\', '/', $_SERVER['SCRIPT_NAME'] ?? ''));
 error_reporting(E_ALL);
