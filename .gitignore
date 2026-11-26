@@ -1,0 +1,8 @@
+# local DB dumps and user-uploaded photos
+backups/
+uploads/*
+!uploads/.htaccess
+!uploads/.gitkeep
+*.log
+.vscode/
+.claude/

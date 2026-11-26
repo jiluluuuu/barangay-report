@@ -1,0 +1,5 @@
+Options -Indexes
+# keep database files and notes private
+<FilesMatch "\.(sql|md|txt|log|ini|bak)$">
+  Require all denied
+</FilesMatch>
