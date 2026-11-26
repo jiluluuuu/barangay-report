@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="assets/css/style.css?v=<?= filemtime(__DIR__."/assets/css/style.css") ?>"><link rel="stylesheet" href="assets/css/form.css?v=<?= filemtime(__DIR__."/assets/css/form.css") ?>"></head>
 <body class="ff">
 <?php sprite(); ?>
-<header class="topbar"><div class="brand"><img src="images/logo.png" class="logo" alt="" onerror="this.style.display='none'"><a href="index.php" style="text-decoration:none">Barangay Accessibility &amp; Barrier Report System</a></div>
+<header class="topbar"><div class="brand"><img src="images/bgy.jpg" class="logo" alt="" onerror="this.style.display='none'"><a href="index.php" style="text-decoration:none">Barangay Accessibility &amp; Barrier Report System</a></div>
   <div class="top-right"><a href="track.php">Track a report</a><a class="backbtn" href="index.php" onclick="if(history.length>1){history.back();return false}"><?= ic('back') ?>Back</a></div></header>
 <main class="ff-main">
 <div class="fc" id="card">

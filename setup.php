@@ -71,7 +71,7 @@ $up = __DIR__ . '/uploads';
 if (!is_dir($up)) @mkdir($up, 0775, true);
 $add(is_dir($up) && is_writable($up), 'Folder uploads/ is writable', is_writable($up) ? 'yes' : 'No. Give the web server write permission to uploads/');
 $add(true, 'PHP upload limits', 'upload_max_filesize ' . ini_get('upload_max_filesize') . ', post_max_size ' . ini_get('post_max_size') . ' (photos are shrunk in the browser, so small limits still work)');
-$add(true, 'images/logo.png', file_exists(__DIR__ . '/images/logo.png') ? 'found' : 'missing (a round "B" shows instead). Add your logo');
+$add(true, 'Logo images/bgy.jpg', file_exists(__DIR__ . '/images/bgy.jpg') ? 'found' : 'missing (a round "B" shows instead). Add your logo');
 $add(!$connErr, "MySQL server $host:$port as '$db_user'", $connErr ?: 'connected');
 $add($dbExists, "Database `$db_name`", $dbExists ? 'exists' : 'does not exist yet. Press "Create database and tables"');
 

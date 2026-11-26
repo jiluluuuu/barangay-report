@@ -7,7 +7,7 @@ try {
         ROUND(AVG(CASE WHEN resolved_at IS NOT NULL THEN TIMESTAMPDIFF(HOUR,created_at,resolved_at) END)/24,1) d FROM reports")->fetch();
     $recent = $pdo->query("SELECT type,location,resolved_at FROM reports WHERE status='Resolved' ORDER BY resolved_at DESC LIMIT 4")->fetchAll();
 } catch (Exception $e) {}
-$logo = '<img src="images/logo.png" alt="" onerror="this.replaceWith(Object.assign(document.createElement(\'span\'),{className:\'seal\',textContent:\'B\'}))">';
+$logo = '<img src="images/bgy.jpg" alt="" onerror="this.replaceWith(Object.assign(document.createElement(\'span\'),{className:\'seal\',textContent:\'B\'}))">';
 ?>
 <!DOCTYPE html>
 <html lang="en" data-base="./"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">

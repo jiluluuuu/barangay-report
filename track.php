@@ -4,7 +4,7 @@
 <title>Track Report</title><link rel="stylesheet" href="assets/css/style.css?v=<?= filemtime(__DIR__."/assets/css/style.css") ?>"></head>
 <body class="form-page">
 <?php sprite(); gov_strip(); ?>
-<header class="topbar"><div class="brand"><img src="images/logo.png" class="logo" alt="" onerror="this.style.display='none'"><a href="index.php" style="text-decoration:none">Barangay Accessibility &amp; Barrier Report System</a></div>
+<header class="topbar"><div class="brand"><img src="images/bgy.jpg" class="logo" alt="" onerror="this.style.display='none'"><a href="index.php" style="text-decoration:none">Barangay Accessibility &amp; Barrier Report System</a></div>
   <div class="top-right"><a class="backbtn" href="index.php" onclick="if(history.length>1){history.back();return false}"><?= ic('back') ?>Back</a></div></header>
 <div class="track-card">
   <h2>Track Your Report</h2>

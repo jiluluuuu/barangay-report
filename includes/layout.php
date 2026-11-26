@@ -15,7 +15,7 @@ function admin_head($title, $active, $sub = '') {
 </head><body class="admin <?= $active === 'dashboard' ? 'fit' : '' ?>">
 <?php sprite(); ?>
 <header class="topbar">
-  <div class="brand"><img src="<?= $b ?>images/logo.png" alt="" class="logo" onerror="this.style.display='none'"><span>Barangay Accessibility &amp; Barrier Report System</span></div>
+  <div class="brand"><img src="<?= $b ?>images/bgy.jpg" alt="" class="logo" onerror="this.style.display='none'"><span>Barangay Accessibility &amp; Barrier Report System</span></div>
   <div class="top-right">
     <div class="bell-wrap"><button id="bell" class="bell" aria-label="Notifications"><?= ic('bell') ?><span id="bellCount" class="badge" hidden>0</span></button>
       <div id="bellPanel" class="bell-panel" hidden><div class="bell-head"><b>Notifications</b><a href="#" id="markRead">Mark all read</a></div><div id="bellList"></div></div></div>

@@ -5,7 +5,7 @@ body.lp{margin:0;color:#fff;font-family:'Lexend','Segoe UI',system-ui,sans-serif
 .lp a{color:inherit}.lp :focus-visible{outline:3px solid #c8ff00;outline-offset:2px}
 .lbar{background:#1d4e79;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:10px 26px}
 .lbar .brand{display:flex;align-items:center;gap:16px;font-weight:600;font-size:1rem;text-decoration:none}
-.lbar img,.lbar .seal{width:44px;height:44px;border-radius:50%;object-fit:cover}
+.lbar img,.lbar .seal{width:44px;height:44px;border-radius:50%;object-fit:cover;background:#fff;flex-shrink:0}
 .seal{display:flex;align-items:center;justify-content:center;background:#fff;color:#1d4e79;font-weight:700}
 .lbar nav{display:flex;align-items:center;gap:16px;font-size:.88rem}.lbar nav a{text-decoration:none}.lbar nav a:hover{text-decoration:underline}
 .sz{display:flex;border:1px solid rgba(255,255,255,.55);border-radius:5px;overflow:hidden}
