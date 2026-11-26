@@ -56,9 +56,11 @@ body.lp{margin:0;color:#fff;font-family:'Lexend','Segoe UI',system-ui,sans-serif
 /* phones: compact header, keep text-size buttons + Track link on one line */
 @media(max-width:600px){
   .lbar{padding:8px 14px;gap:10px}
-  .lbar .brand span{display:none}
+  .lbar .brand > span:not(.seal){display:none}
   .lbar img,.lbar .seal{width:38px;height:38px}
   .lbar nav{gap:12px;flex-shrink:0;white-space:nowrap}
   .sz button{padding:4px 9px}
   .lp .cta{display:block;max-width:320px;margin:0 auto;padding:14px 20px}
 }
+/* stack Before / arrow / After vertically once they no longer fit side by side */
+@media(max-width:860px){.ba{flex-direction:column;gap:14px}.ba .arrow{transform:none}.ba .arrow::before{content:"\2193"}.ba .arrow{font-size:0}.ba .arrow::before{font-size:1.8rem}}
